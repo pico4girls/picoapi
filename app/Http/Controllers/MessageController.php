@@ -44,7 +44,7 @@ class MessageController extends Controller
 
       Message::create(['body' => $validatedData['body'], 'rfid_tag' => '12345' ]);
 
-/*
+
       $client = new Client(); //GuzzleHttp\Client
       $result = $client->post('https://hooks.slack.com/services/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', [
         'form_params' => [
@@ -53,7 +53,7 @@ class MessageController extends Controller
             'text' => $validatedData['body']
         ]
       ]);
-*/
+
       return response()->json(['message' => 'Message saved to database and sent to slack.']);
     }
 
