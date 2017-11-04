@@ -3,6 +3,7 @@
 namespace Pico\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Pico\Message;
 
 class MessageController extends Controller
 {
