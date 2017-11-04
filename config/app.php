@@ -178,7 +178,7 @@ return [
         Pico\Providers\RouteServiceProvider::class,
 
         //Maknz\Slack\Laravel\ServiceProvider::class,
-
+        Barryvdh\Cors\ServiceProvider::class,
     ],
 
     /*
