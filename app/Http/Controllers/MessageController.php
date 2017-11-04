@@ -42,7 +42,7 @@ class MessageController extends Controller
         'body' => 'required',
       ]);
 
-      Message::create($validatedData);
+      Message::create(['body' => $validatedData['body'], 'rfid_tag' => '12345' ]);
 
 /*
       $client = new Client(); //GuzzleHttp\Client
