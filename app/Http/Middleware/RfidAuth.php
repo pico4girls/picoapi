@@ -15,6 +15,10 @@ class RfidAuth
      */
     public function handle($request, Closure $next)
     {
+        // check if user exists with rfid_token
+
+        // If the user is not registered create user and request info
+
         return $next($request);
     }
 }
