@@ -33,6 +33,7 @@ class MessageController extends Controller
     public function indexUnread()
     {
       $messages = Message::where('read', '=', 0)->get();
+      $messages->update(['read' => 1]);
 
       return response()->json($messages);
         //return
