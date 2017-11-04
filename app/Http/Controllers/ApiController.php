@@ -39,6 +39,11 @@ class ApiController extends Controller
 
     public function slackPost(Request $request)
     {
-      Message::create(['body' => 'Slack posted a message']);
+      Message::create(['body' => $request->get('text'), 'rfid_tag' => '12345']);
+      //Message::create([ 'body' => 'Slack posted a message', 'rfid_tag' => '12345']);
+
+      return response()->json([
+        "text" => "Pico user received your message. Thank you!"
+      ]);
     }
 }
