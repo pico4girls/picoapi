@@ -20,4 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Route::middleware('rfid_auth')->post('/test', 'ApiController@test');
 
 //Route::middleware('rfid_auth')->get('/test2', 'ApiController@test2');
-Route::get('/test2', 'ApiController@test2');
+//Route::get('/test2', 'ApiController@test2');
+
+Route::get('/test', function(){
+  return response()->json([
+    'test' => 123
+  ]);
+});
