@@ -23,12 +23,21 @@ class ApiController extends Controller
       Message::create([ 'body' => 'test message created', 'rfid_tag' => '12345']);
 
       $client = new Client(); //GuzzleHttp\Client
-      $result = $client->post('https://hooks.slack.com/services/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', [
-        'form_params' => [
+      // $result = $client->post('https://hooks.slack.com/services/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', [
+      //   'form_params' => [
+      //       'channel' => 'messages',
+      //       'username' => 'picobot',
+      //       'text' => 'test message created'
+      //   ]
+      // ]);
+
+
+      $response = $client->post('https://hooks.slack.com/services/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', [
+          GuzzleHttp\RequestOptions::JSON => [
+            'text' => 'test',
             'channel' => 'messages',
-            'username' => 'picobot',
-            'text' => 'test message created'
-        ]
+            'username' => 'picobot'
+          ]
       ]);
 
       return response()->json(['message' => 'message created']);
