@@ -49,6 +49,8 @@ class MessageController extends Controller
             'text' => $validatedData['body']
         ]
       ]);
+
+      return response()->json(['message' => 'Message saved to database and sent to slack.']);
     }
 
     /**
