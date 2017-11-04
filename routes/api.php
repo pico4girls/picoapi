@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('rfid_auth')->post('/test', 'ApiController@test');
+//Route::middleware('rfid_auth')->post('/test', 'ApiController@test');
 
 //Route::middleware('rfid_auth')->get('/test2', 'ApiController@test2');
 Route::get('/test2', 'ApiController@test2');
