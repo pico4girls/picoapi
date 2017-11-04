@@ -18,6 +18,7 @@ class ApiController extends Controller
 
     public function test2(Request $request)
     {
-      return json_encode($request('rfid_token'));
+      echo("test2");
+      //return json_encode($request('rfid_token'));
     }
 }
