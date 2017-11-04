@@ -8,6 +8,7 @@ use Pico\User;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
+use GuzzleHttp\RequestOptions;
 
 class ApiController extends Controller
 {
