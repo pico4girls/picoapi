@@ -14,7 +14,7 @@ class MessageController extends Controller
     public function index()
     {
 
-        //return 
+        //return
     }
 
     /**
@@ -35,7 +35,20 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $validatedData = $request->validate([
+        'rfid_tag' => 'required',
+        'body' => 'required',
+      ]);
+
+
+      $client = new Client(); //GuzzleHttp\Client
+      $result = $client->post('https://hooks.slack.com/services/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', [
+        'form_params' => [
+            'channel' => 'messages',
+            'username' => 'picobot',
+            'text' => $validatedData['body']
+        ]
+      ]);
     }
 
     /**

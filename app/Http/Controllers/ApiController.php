@@ -4,6 +4,10 @@ namespace Pico\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Pico\Message;
+use Pico\User;
+
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
 
 class ApiController extends Controller
 {
