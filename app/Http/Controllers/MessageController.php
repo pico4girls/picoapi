@@ -5,6 +5,11 @@ namespace Pico\Http\Controllers;
 use Illuminate\Http\Request;
 use Pico\Message;
 
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
+use GuzzleHttp\RequestOptions;
+
+
 class MessageController extends Controller
 {
     /**
@@ -38,11 +43,11 @@ class MessageController extends Controller
     {
 
       $validatedData = $request->validate([
-        //'rfid_tag' => 'required',
+        'rfid_tag' => 'required',
         'body' => 'required',
       ]);
 
-      Message::create(['body' => $validatedData['body'], 'rfid_tag' => '12345' ]);
+      Message::create(['body' => $validatedData['body'], 'rfid_tag' => $validatedData['rfid_tag'] ]);
       //$validatedData['rfid_tag']
       $client = new Client();
       $response = $client->post('https://hooks.slack.com/services/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', [
