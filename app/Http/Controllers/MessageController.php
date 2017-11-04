@@ -19,9 +19,25 @@ class MessageController extends Controller
      */
     public function index()
     {
+      $messages = Message::where('read', '=', 0)->get();
 
+      return response()->json($messages);
         //return
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexUnread()
+    {
+      $messages = Message::where('read', '=', 0)->get();
+
+      return response()->json($messages);
+        //return
+    }
+
 
     /**
      * Show the form for creating a new resource.

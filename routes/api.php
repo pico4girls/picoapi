@@ -29,6 +29,7 @@ Route::post('/slack_post', 'ApiController@slackPost');
 
 Route::get('/test2', 'ApiController@test2');
 
+Route::get('/messages/unread', 'MessageController@indexUnread');
 Route::apiResource('messages', 'MessageController');
 
 //Route::middleware('rfid_auth')->get('/test2', 'ApiController@test2');
