@@ -38,7 +38,7 @@ class MessageController extends Controller
     {
 
       $validatedData = $request->validate([
-        'rfid_tag' => 'required',
+        //'rfid_tag' => 'required',
         'body' => 'required',
       ]);
 
