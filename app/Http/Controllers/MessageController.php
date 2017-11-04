@@ -19,7 +19,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-      $messages = Message::get();
+      $messages = Message::orderBy('created_at', 'desc')->take(10);
 
       return response()->json($messages);
         //return
@@ -32,7 +32,7 @@ class MessageController extends Controller
      */
     public function indexUnread()
     {
-      $messages = Message::where('read', '=', 0)->get();
+      $messages = Message::where('read', '=', 0)->orderBy('created_at', 'desc')->take(10);
 
       Message::where('read', '=', 0)->update(['read' => 1]);
 
