@@ -43,7 +43,7 @@ class ApiController extends Controller
       //Message::create([ 'body' => 'Slack posted a message', 'rfid_tag' => '12345']);
 
       return response()->json([
-        "text" => "[Message delivered, thank you!"
+        "text" => "System: Message delivered, thank you!"
       ]);
     }
 }
