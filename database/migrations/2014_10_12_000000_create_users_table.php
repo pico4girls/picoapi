@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('rfid_token');
+            $table->string('rfid_tag');
             $table->date('birthdate');
             $table->integer('year_of_birth');
             $table->string('gender');

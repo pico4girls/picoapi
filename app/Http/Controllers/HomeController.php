@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Pico\Http\Controllers;
 
 use Illuminate\Http\Request;
 
