@@ -39,11 +39,14 @@ class ApiController extends Controller
 
     public function slackPost(Request $request)
     {
-      Message::create(['body' => $request->get('text'), 'rfid_tag' => '12345']);
+      if($request->get('token') == "e6NCpDzZFUPdNoxgx11PEinl")
+      {
+        Message::create(['body' => $request->get('text'), 'rfid_tag' => '12345']);
       //Message::create([ 'body' => 'Slack posted a message', 'rfid_tag' => '12345']);
 
-      return response()->json([
-        "text" => "System: Message delivered, thank you!"
-      ]);
+        return response()->json([
+          "text" => "System: Message delivered, thank you!"
+        ]);
+      }
     }
 }
