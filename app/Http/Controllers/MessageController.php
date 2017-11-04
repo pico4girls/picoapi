@@ -35,6 +35,7 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
+      /*
       $validatedData = $request->validate([
         'rfid_tag' => 'required',
         'body' => 'required',
@@ -49,7 +50,7 @@ class MessageController extends Controller
             'text' => $validatedData['body']
         ]
       ]);
-
+      */
       return response()->json(['message' => 'Message saved to database and sent to slack.']);
     }
 
